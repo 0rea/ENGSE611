@@ -1,0 +1,123 @@
+body {
+    font-family: 'Arial', sans-serif; 
+    background-color: #f4f7f6; 
+    color: #333; 
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    color: #2e6da4; 
+    font-size: 3.5em;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: justify;
+    color: #555;
+    font-weight: 400;
+}
+h2 {
+    color: #FF6347; 
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 40px;
+    border-bottom: 2px solid #FF6347;
+    padding-bottom: 10px;
+}
+ul, ol {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    list-style-position: inside; 
+}
+ul li, ol li {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    padding-left: 25px; 
+    position: relative;
+}
+ul li::before, ol li::before {
+    content: "•";
+    color: #FF6347; 
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+img {
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img[src*="happy"] {
+    border: 5px solid #4CAF50; 
+}
+img[src*="sad"] {
+    border: 5px solid #f44336; 
+}
+a {
+    color: #2e6da4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+a:hover {
+    color: #FF6347;
+    text-decoration: underline;
+    transform: scale(1.1); 
+}
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+a img {
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+a img:hover {
+    transform: scale(1.1); 
+}
+p a {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2e6da4;
+    padding: 10px 20px;
+    border: 2px solid #2e6da4;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+p a:hover {
+    background-color: #2e6da4;
+    color: #fff; 
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 1em; 
+    }
+    h1 {
+        font-size: 2.5em; 
+    }
+    h2 {
+        font-size: 2em; 
+    }
+    ul, ol {
+        padding-left: 15px; 
+    }
+    img {
+        width: 90%; 
+    }
+}
