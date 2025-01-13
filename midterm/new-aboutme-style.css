@@ -1,17 +1,18 @@
-/* General styles */
+/* General styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(245, 172, 15);  /* สีพื้นหลังของทั้งหน้า */
-    color: #333; /* สีข้อความ */
+    background-color: rgb(255, 255, 255); /* About Me Background Color */
+    color: #333;
 }
 
 header {
-    background-color: rgb(245, 172, 15);  /* สีทองอ่อนสำหรับ header */
+    background-color: rgb(245, 172, 15); /* About Me Header Color */
     color: white;
     text-align: center;
     padding: 20px;
+    border-bottom: 3px solid #5c6bc0; /* เพิ่มเส้นขอบที่ด้านล่างของ header */
 }
 
 h1 {
@@ -19,108 +20,123 @@ h1 {
     font-size: 2.5em;
 }
 
-h2 {
-    color: rgb(245, 172, 15);  /* ใช้สีทองอ่อนสำหรับหัวข้อ */
-}
-
-/* Section styles */
-section {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* About Me section */
-.personal-info {
-    background-color: rgb(245, 172, 15);  /* พื้นหลังสีทองอ่อน */
-    color: white;
-}
-
-/* Classes and Favorites section */
-.content-layout {
+/* Central Row */
+.central-row {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
-}
-
-section.classes, section.favorites {
-    flex: 1;
-    background-color: rgb(255, 242, 204);  /* พื้นหลังสีเหลืองอ่อน */
-    padding: 20px;
-}
-
-/* Emotion and Neighbor section */
-.emotions-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 20px;
-    margin: 20px;
-}
-
-.emotions-layout .emotion,
-.emotions-layout .neighbor {
-    background-color: rgb(213, 232, 212);  /* พื้นหลังสีเขียวอ่อน */
-    text-align: center;
     padding: 20px;
-    flex: 1;
+    background-color: rgb(255, 242, 204); /* Background Color for Current Classes & Favorite Movies */
+    margin: 20px 0;
+    border: 2px solid #5c6bc0; /* เพิ่มเส้นขอบให้กับแถวกลาง */
+    border-radius: 8px;
 }
 
-.emotions-layout .emotion img {
-    width: 150px; /* ขนาดภาพเล็กลง */
-}
-
-/* Footer styles */
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
+.central-row .classes,
+.central-row .favorites {
+    background-color: rgb(255, 242, 204); /* Keep background color consistent */
+    color: #333;
     padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    border-radius: 8px;
+    flex: 1; /* Make sure columns take equal space */
+    min-height: 200px; /* Ensure both sections have the same minimum height */
+    border: 2px solid #5c6bc0; /* เพิ่มเส้นขอบ */
 }
 
-footer img {
-    margin: 5px;
+.central-row .classes h2,
+.central-row .favorites h2 {
+    font-size: 1.5em;
 }
 
-footer a {
-    color: white;
+.central-row .classes ul,
+.central-row .favorites ol {
+    padding-left: 20px;
+}
+
+.central-row .favorites a {
+    color: #333;
     text-decoration: none;
 }
 
-footer a:hover {
+.central-row .favorites a:hover {
     text-decoration: underline;
 }
 
-/* Small screen responsiveness */
+/* Table layout */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.info-table td {
+    padding: 20px;
+    vertical-align: top;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid #5c6bc0; /* เพิ่มเส้นขอบที่ตาราง */
+}
+
+/* Columns in table */
+.table-column-left,
+.table-column-center,
+.table-column-right {
+    background-color: rgb(213, 232, 212); /* Background color for these columns */
+    color: #333;
+    padding: 20px;
+    width: 33%;
+    box-sizing: border-box;
+    border: 2px solid #5c6bc0; /* เพิ่มเส้นขอบ */
+}
+
+/* Custom mood box styling for each mood */
+.mood-box {
+    background-color: rgb(213, 232, 212); /* Set background color for all mood boxes */
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 200px; /* Ensure all mood boxes have equal height */
+    border: 2px solid #5c6bc0; /* เพิ่มเส้นขอบ */
+}
+
+.mood-box img {
+    width: 100%; /* Ensure images fill the available width */
+    height: auto;
+    max-width: 250px; /* Ensure images are not too big */
+    margin: 10px 0;
+}
+
+/* Styling for the last column (neighbor info) */
+.table-column-right h2 {
+    font-size: 1.5em;
+}
+
+.table-column-right p {
+    font-size: 1.2em;
+}
+
+/* Responsive layout for mobile devices */
 @media (max-width: 600px) {
     body {
         padding: 10px;
     }
 
-    section {
-        padding: 15px;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    .content-layout {
+    .central-row {
         flex-direction: column;
         align-items: center;
     }
 
-    .separator {
-        display: none;
-    }
-
-    .emotions-layout {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .emotions-layout .emotion img {
+    .central-row .classes,
+    .central-row .favorites {
         width: 100%;
+    }
+
+    .info-table td {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
     }
 }
